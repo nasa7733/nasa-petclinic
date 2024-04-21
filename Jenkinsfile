@@ -44,7 +44,7 @@ pipeline {
             steps {
                 script {
                     // Authenticate to GCR
-                    withCredentials([file(credentialsId: 'gcp-service-account-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
+                    withCredentials([file(credentialsId: 'sql-creds', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
                         sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
                     }
                     
