@@ -3,8 +3,8 @@ pipeline {
     
     environment {
         GCP_PROJECT_ID = "vasmi-cloud"
-        // GCP_SA_KEY = credentials('gcp-service-account-key') // Jenkins credentials for GCP service account key
-        GCR_IMAGE_NAME = "gcr.io/${GCP_PROJECT_ID}/your-image-name"
+        GCP_SA_KEY = credentials('sql-creds') // Jenkins credentials for GCP service account key
+        GCR_IMAGE_NAME = "us-central1-docker.pkg.dev/vamsi-cloud/docker-repo"
         GKE_CLUSTER_NAME = "your-gke-cluster-name"
         GKE_ZONE = "your-gke-zone"
         K8S_NAMESPACE = "your-kubernetes-namespace"
@@ -50,6 +50,7 @@ pipeline {
                     
                     // Push Docker image to GCR
                     sh "docker push ${GCR_IMAGE_NAME}:latest"
+                    sh "docker push ${GCR_IMAGE_NAME}:${build_id}
                 }
             }
         }
