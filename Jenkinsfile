@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        GCP_PROJECT_ID = "vasmi-cloud"
+        GCP_PROJECT_ID = "vamsi-cloud"
         BUILD_ID = "${env.BUILD_ID}"
         GCP_SA_KEY = credentials('sql-creds') // Jenkins credentials for GCP service account key
         GCR_REPO_NAME = "us-central1-docker.pkg.dev/vamsi-cloud/docker-repo"
