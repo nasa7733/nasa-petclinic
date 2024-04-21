@@ -22,7 +22,7 @@ spec:
         app: petclinic
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/vamsi-cloud/docker-repo/petclinic:${BUILD_ID}
+      - image: us-central1-docker.pkg.dev/vamsi-cloud/docker-repo/petclinic:latest
         imagePullPolicy: IfNotPresent
         name: petclinic
 
