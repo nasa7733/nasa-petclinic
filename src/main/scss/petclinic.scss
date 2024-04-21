@@ -15,8 +15,8 @@
 
 $icon-font-path:    "../../webjars/bootstrap/fonts/";
 
-$spring-green:      #6db33f;
-$spring-dark-green: #5fa134;
+$spring-green:      #3217de;
+$spring-dark-green: #3a02bc;
 $spring-brown:      #34302D;
 $spring-grey:       #838789;
 $spring-light-grey: #f1f1f1;
@@ -186,6 +186,10 @@ table td.action-column {
 
 .status-help-content-table td {
   color: $spring-brown;
+}
+
+.logo {
+  width: 200px;
 }
 
 .myspinner {

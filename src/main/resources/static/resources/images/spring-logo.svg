@@ -1,0 +1,31 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 2674.9 417">
+    <style>
+        .st0, .st1 {
+            fill: #6db33f;
+        }
+        .st3 {
+            fill: #fff;
+        }
+        .moving-text {
+            fill: green;
+            font-size: 200px;
+            font-family: Arial;
+            animation: moveText 100s infinite alternate; /* Adjust animation duration and direction as needed */
+        }
+        @keyframes moveText {
+           0% from {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100px); /* Adjust the vertical distance as needed */
+            }
+        }
+    </style>
+    <g>
+        <!-- Paths and shapes -->
+    </g>
+    <path class="st3" d="M92.9,356.7c-5.8,7.5-16.6,8.3-24.1,2.5s-8.3-16.6-2.5-24.1s16.6-8.3,24.1-2.5C97.5,338.4,98.7,349.2,92.9,356.7z"></path>
+    <path class="st3" d="M365.7,296.4c-49.5,66.1-155.9,43.7-223.7,47c0,0-12.1,0.8-24.1,2.5c0,0,4.6-2.1,10.4-4.2c47.8-16.6,70.3-20,99.4-34.9c54.5-27.9,108.9-89,119.8-152.2c-20.8,60.7-84,113.1-141.4,134.3c-39.5,14.6-110.6,28.7-110.6,28.7 l-2.9-1.7c-48.2-23.7-49.9-128.5,38.3-162.2c38.7-15,75.3-6.7,117.3-16.6c44.5-10.4,96.1-43.7,116.8-87.3 C388.1,120.1,416.4,229,365.7,296.4z"></path>
+    <!-- Text with animation added here -->
+    <text x="200" y="200" class="moving-text">Developed by NASA</text>
+</svg>
