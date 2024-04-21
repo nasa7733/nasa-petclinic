@@ -63,7 +63,9 @@ pipeline {
                 script {
                     // Set GKE cluster context
                     sh "gcloud container clusters get-credentials ${GKE_CLUSTER_NAME} --zone ${GKE_ZONE} --project ${GCP_PROJECT_ID}"
-                    
+                     nvVars: [
+                            containerImageTag: env.BUILD_ID
+                        ]
                     // Apply Kubernetes deployment
                     sh "kubectl apply -f manifest/kube.yaml --namespace=${K8S_NAMESPACE} --record"
                    
