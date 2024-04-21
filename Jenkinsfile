@@ -48,7 +48,7 @@ pipeline {
                     withCredentials([file(credentialsId: 'sql-creds', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
                         sh 'gcloud auth activate-service-account --key-file=$GOOGLE_APPLICATION_CREDENTIALS'
                     }
-                    
+                     sh 'gcloud auth configure-docker us-central1-docker.pkg.dev'
                     // Push Docker image to GCR
                     sh "docker push ${GCR_IMAGE_NAME}:latest"
                     sh "docker push ${GCR_IMAGE_NAME}:${BUILD_ID}"
