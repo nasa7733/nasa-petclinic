@@ -26,7 +26,7 @@ pipeline {
                 script {
                     // Build your Spring Boot application
                     sh './mvnw -DskipTests clean package'
-                    sh ls
+                    sh 'ls'
                 }
             }
         }
