@@ -36,7 +36,9 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    docker.build(GCR_IMAGE_NAME)
+                   sh 'docker build -t ${GCR_REPO_NAME}/petclinic:latest .'
+                   sh 'docker build -t ${GCR_REPO_NAME}/petclinic:${BUILD_ID} .'
+                    
                 }
             }
         }
