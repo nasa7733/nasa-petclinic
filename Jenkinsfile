@@ -6,10 +6,10 @@ pipeline {
         BUILD_ID = "${env.BUILD_ID}"
         GCP_SA_KEY = credentials('sql-creds') // Jenkins credentials for GCP service account key
         GCR_REPO_NAME = "us-central1-docker.pkg.dev/vamsi-cloud/docker-repo"
-        GKE_CLUSTER_NAME = "your-gke-cluster-name"
-        GKE_ZONE = "your-gke-zone"
-        K8S_NAMESPACE = "your-kubernetes-namespace"
-        K8S_DEPLOYMENT_NAME = "your-deployment-name"
+        GKE_CLUSTER_NAME = "vamsi-gke-dev-new"
+        GKE_ZONE = "asia-east1-a	"
+        K8S_NAMESPACE = "petclinic"
+
     }
     
     stages {
@@ -65,11 +65,11 @@ pipeline {
                     sh "gcloud container clusters get-credentials ${GKE_CLUSTER_NAME} --zone ${GKE_ZONE} --project ${GCP_PROJECT_ID}"
                     
                     // Apply Kubernetes deployment
-                    sh "kubectl apply -f kubernetes/deployment.yaml --namespace=${K8S_NAMESPACE} --record"
+                    sh "kubectl apply -f manifest/kube.yaml --namespace=${K8S_NAMESPACE} --record"
                     
                     // Wait for deployment rollout to complete
                     timeout(time: 10, unit: 'minutes') {
-                        sh "kubectl rollout status deployment/${K8S_DEPLOYMENT_NAME} --namespace=${K8S_NAMESPACE}"
+                       
                     }
                 }
             }
