@@ -66,11 +66,8 @@ pipeline {
                     
                     // Apply Kubernetes deployment
                     sh "kubectl apply -f manifest/kube.yaml --namespace=${K8S_NAMESPACE} --record"
+                   
                     
-                    // Wait for deployment rollout to complete
-                    timeout(time: 10, unit: 'minutes') {
-                       
-                    }
                 }
             }
         }
