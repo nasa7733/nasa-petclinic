@@ -50,7 +50,7 @@ pipeline {
                     
                     // Push Docker image to GCR
                     sh "docker push ${GCR_IMAGE_NAME}:latest"
-                    sh "docker push ${GCR_IMAGE_NAME}:${build_id}
+                    sh "docker push ${GCR_IMAGE_NAME}:${build_id}"
                 }
             }
         }
