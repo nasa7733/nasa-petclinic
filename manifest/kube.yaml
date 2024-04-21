@@ -22,7 +22,7 @@ spec:
         app: petclinic
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/vamsi-cloud/docker-repo/petclinic:latest
+      - image: us-central1-docker.pkg.dev/vamsi-cloud/docker-repo/petclinic:${containerImageTag}
         imagePullPolicy: IfNotPresent
         name: petclinic
 
